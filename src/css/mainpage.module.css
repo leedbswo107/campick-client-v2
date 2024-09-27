@@ -1,0 +1,338 @@
+/* 기본 스타일 */
+.mainVisual {
+  padding: 0 4rem;
+  width: 100%;
+  display: block;
+  position: relative;
+  top: 0;
+}
+.mainBackgroundSwiper > div > div {
+  padding-top: 50%;
+  position: relative;
+}
+.mainBackgroundSwiper > div > div > img {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mainVisual > div:nth-child(1) > div:nth-child(1) > div {
+  font-size: 100px;
+}
+
+.mainVisual > div:nth-child(2) > div {
+  height: 300px;
+}
+
+/* next, prev btn */
+.mainVisual > div:nth-child(2) > div > div:nth-child(2),
+.mainVisual > div:nth-child(2) > div > div:nth-child(3) {
+  display: none;
+}
+.mainBannerBlog {
+  visibility: hidden;
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.mainBannerBlog {
+  z-index: 12;
+  /* text-align: center; */
+  /* margin: 0 auto; */
+}
+.mainBannerBlog strong,
+.mainBannerBlog h3,
+.mainBannerBlog a {
+  font-size: 1rem;
+  /* -webkit-box-orient: vertical; */
+  overflow: hidden;
+  /* text-overflow: ellipsis; */
+}
+.mainBannerBlog a {
+  border-bottom: 1px solid white;
+}
+.mainVisual > div:nth-child(2) > div > div:nth-child(4) {
+  bottom: 110%;
+  height: 1rem;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.mainEventsWarp h2 {
+  text-align: center;
+  padding: 2rem;
+}
+.mainEvents {
+  margin: 0 auto;
+  width: 50%;
+}
+.mainVisual > div:nth-child(2) > div > div:nth-child(4) > span {
+  width: 98px;
+  height: 25px;
+  border-radius: 3px 3px 0 0;
+  background-color: white;
+  margin: 0;
+}
+
+.blogTapWarp,
+.mainExplainSwiper {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+}
+
+.blogTapWarp {
+  right: 10%;
+  bottom: 30%;
+}
+
+.blogTapWarp > div > div {
+  height: calc(100% + 30px);
+}
+
+.mainExplainSwiper {
+  right: 0;
+  bottom: -120px;
+  display: block;
+}
+
+.blog {
+  position: relative;
+  z-index: 12;
+  top: 1.5rem;
+  width: 300px;
+  height: 270px;
+  background-color: white;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  margin: 0 auto;
+  padding: 34px 28px 28px 28px;
+}
+
+.blog strong,
+.blog h3,
+.blog p {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.blog strong {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  font-weight: 600;
+  margin-bottom: 6px;
+  -webkit-line-clamp: 1;
+}
+
+.blog h3 {
+  font-size: 20px;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+  -webkit-line-clamp: 2;
+  margin-bottom: 16px;
+}
+
+.blog p {
+  font-size: 15px;
+  color: rgba(0, 0, 0, 0.8);
+  line-height: 18px;
+  padding-top: 2rem;
+  -webkit-line-clamp: 6;
+  font-weight: 300;
+}
+
+.blog a {
+  position: absolute;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.5);
+  text-decoration: none;
+  margin-top: 13px;
+  display: inline-block;
+  font-weight: 300;
+  right: 28px;
+  bottom: 28px;
+}
+
+.blog a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: currentColor;
+  width: 100%;
+}
+.mainEventsWarp {
+}
+.mainEventsWarp .swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.mainEventsWarp .swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+
+  /* Center slide text vertically */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainEventsWarp .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainVideoWarp {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4rem;
+}
+
+.mainVideoWarp {
+  background-color: #1f3b3418;
+  height: 770px;
+}
+
+.mainVideoWarp h2,
+.mainEventsWarp h2 {
+  color: #1f3b34;
+  font-size: 38px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.mainVideo {
+  width: 980px;
+  height: 540px;
+  /* margin-bottom: 30px; */
+}
+
+.mainEventsWarp {
+  padding: 4rem 0;
+  /* height: 600px; */
+  /* margin-bottom: 60px; */
+}
+
+.mainEvents {
+  /* width: 980px; */
+  /* height: 360px; */
+  position: relative;
+}
+
+.mainEvents img {
+  /* max-width: 239px; */
+  /* max-height: 360px; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mainEventsSwiper > div > .mainEventsSwiper {
+  width: 980px;
+  height: 400px;
+  position: relative;
+}
+
+.mainEventsSwiper > div:nth-child(2) > span {
+  background: #1f3b34;
+}
+
+.prevButton,
+.nextButton {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  color: #1f3b34;
+  cursor: pointer;
+}
+.mainVideo > div > iframe {
+  transition: 0.3s;
+}
+.prevButton {
+  left: -50px;
+}
+
+.nextButton {
+  right: -50px;
+}
+
+.buttonDisabled {
+  color: #1f3b344f;
+  cursor: not-allowed;
+}
+@media (max-width: 1000px) {
+  .mainVideo > div {
+    display: flex;
+    justify-content: center;
+  }
+  .mainVideo > div > iframe {
+    width: 600px;
+    height: 350px;
+  }
+  .mainVideoWarp {
+    padding-top: 3rem;
+    height: 500px;
+  }
+  .mainEvents {
+    width: calc(100% - 15rem);
+  }
+}
+@media (max-width: 900px) {
+  .blogTapWarp {
+    bottom: 35%;
+  }
+  .mainEvents {
+    width: calc(100% - 10rem);
+  }
+}
+@media (max-width: 800px) {
+  .mainVisual {
+    padding: 0;
+  }
+  .blogTapWarp {
+    visibility: hidden;
+  }
+  .mainBannerBlog {
+    visibility: visible;
+  }
+}
+@media (max-width: 600px) {
+  .mainVideoWarp {
+    padding-top: 3rem;
+    height: 400px;
+  }
+  .mainVideo > div > iframe {
+    width: 500px;
+    height: 250px;
+  }
+}
+@media (max-width: 400px) {
+  .mainVideoWarp {
+    padding-top: 3rem;
+    height: 300px;
+  }
+  .mainVideo > div > iframe {
+    width: 300px;
+    height: 170px;
+  }
+  .mainEvents {
+    width: calc(100% - 10rem);
+  }
+}

@@ -1,0 +1,59 @@
+.marketCon > div {
+  margin-bottom: 2rem;
+}
+
+.categories {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.categories button {
+  font-size: 1rem;
+  color: #9c9c9c;
+}
+.categories button:hover,
+.categories button:focus {
+  color: #1f3b34;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.categories button.active {
+  color: #1f3b34;
+  font-weight: bold;
+}
+.writeBtnCon {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.writeBtn {
+  color: #1f3b34;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+.writeBtn span {
+  padding-right: 5px;
+}
+
+.writeBtnCon::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(31, 59, 52, 0.1);
+  margin: 1rem 0 2rem 0;
+}
+.postListWrap {
+  display: flex;
+  justify-content: center;
+}
+
+.postCardList {
+  width: 70%;
+  display: grid;
+  gap: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}

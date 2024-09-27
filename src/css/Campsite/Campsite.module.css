@@ -1,0 +1,42 @@
+.campsite {
+  padding-bottom: 6rem;
+}
+
+.siteAreas {
+  display: grid;
+  padding-top: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1rem;
+  justify-content: center;
+}
+
+.cateGories {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cateGories button {
+  font-size: 1rem;
+  color: #9c9c9c;
+  position: relative;
+  line-height: 1;
+}
+.cateGories button:hover,
+.cateGories button:focus {
+  color: #1f3b34;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+@media (max-width: 800px) {
+  .cateGories {
+    gap: 0.5rem;
+  }
+  .siteAreas {
+    padding-top: 2rem;
+  }
+  .cateGories button {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,33 @@
+.blogPostList {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+}
+
+.writeBtnCon {
+  display: block;
+  width: 100%;
+  text-align: right;
+}
+.writeBtn {
+  color: #1f3b34;
+  cursor: pointer;
+}
+.writeBtn span {
+  padding-right: 5px;
+}
+
+.writeBtnCon::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: rgba(31, 59, 52, 0.1);
+  margin: 1rem 0 3rem 0;
+}
+@media (max-width: 800px) {
+  .blogListWrap {
+    width: 90%;
+  }
+}
