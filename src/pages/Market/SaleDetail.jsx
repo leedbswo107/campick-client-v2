@@ -49,7 +49,7 @@ const SaleDetail = () => {
     createdAt,
     salesStatus,
   } = salePostDetail;
-
+  console.log(userId, authorId);
   const deleteSalePost = async () => {
     try {
       const response = await fetch(salePostsEndpoint, {
@@ -187,6 +187,16 @@ const SaleDetail = () => {
                 ? "거래완료"
                 : "문의하기"}
             </button>
+            {userId !== authorId && salesStatus !== "거래완료" && (
+              <button
+                className="submitButton"
+                onClick={() => {
+                  navigate(`/checkout`);
+                }}
+              >
+                구매하기
+              </button>
+            )}
           </div>
         </div>
       </div>

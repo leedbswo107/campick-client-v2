@@ -22,6 +22,7 @@ import SaleDetail from "./pages/Market/SaleDetail";
 import SalePostEdit from "./pages/Market/SalePostEdit";
 import ChatList from "./pages/Market/ChatList";
 import Chat from "./pages/Market/Chat";
+import Checkout from "./pages/Market/Checkout";
 
 import Contents from "./pages/Contents/Contents";
 import ContentsBlog from "./pages/Contents/ContentsBlog";
@@ -74,6 +75,7 @@ function App() {
         <Route path="/sale-post-edit/:id" element={<SalePostEdit />} />
         <Route path="/sale-chat" element={<ChatList />} />
         <Route path="/sale-chat/:id" element={<Chat />} />
+        <Route path="/checkout" element={<Checkout />} />
 
         {/* =================== contents page =================== */}
         <Route path="/contents" element={<Contents />}>
