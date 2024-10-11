@@ -19,7 +19,7 @@ const Campsite = () => {
   const [page, setPage] = useState(1);
   const [siteLists, setSiteLists] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useState();
 
   const handleObserver = (entries) => {
     const target = entries[0];
@@ -28,14 +28,13 @@ const Campsite = () => {
     }
   };
   const handleCategoryClick = (category) => {
-    searchParams.delete("keyword");
+    setSearchParams("");
     setSearchKeyword("");
 
-    if (!category) {
-      return navigate("/campsite");
-    }
+    if (!category) return navigate("/campsite");
 
-    setSearchParams({ category });
+    setSearchParams(category);
+    console.log(searchParams);
   };
 
   useEffect(() => {
@@ -151,22 +150,37 @@ const Campsite = () => {
         <button onClick={() => handleCategoryClick("")}>전체보기</button>
         {REGION_CATEGORY.map((cate) => (
           <button
-            key={cate.value}
-            onClick={() => handleCategoryClick(cate.label)}
+            key={cate.label}
+            onClick={() => handleCategoryClick(cate.value)}
           >
-            {cate.label}
+            {cate.value}
           </button>
         ))}
       </div>
       <div className={style.siteAreas}>
         {siteLists ? (
-          siteLists.map((site) => {
-            return <SiteCard key={site.contentId} site={site} />;
-          })
+          searchParams ? (
+            siteLists.map((site) => {
+              if (site.doNm === searchParams) {
+                return (
+                  <SiteCard
+                    key={site.contentId}
+                    site={site}
+                    region={searchParams}
+                  />
+                );
+              }
+            })
+          ) : (
+            siteLists.map((site) => {
+              return <SiteCard key={site.contentId} site={site} />;
+            })
+          )
         ) : (
           <div>검색 결과 없음</div>
         )}
       </div>
+
       {loading ? <Loading /> : null}
       <div id="observer" style={{ height: "20px" }}></div>
     </section>
