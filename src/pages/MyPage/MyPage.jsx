@@ -5,6 +5,7 @@ import "../../css/MyPage/MyPageCommon.css";
 
 const MyPage = () => {
   const user = useSelector((state) => state.user.user);
+  const isKakaoLogin = user?.password;
   const nickname = user?.nickname;
   return (
     <section className={style.myPage}>
@@ -17,7 +18,8 @@ const MyPage = () => {
           <Link to="/my-page/bingo-coupon/bingo">빙고 &#47; 쿠폰함</Link>
           <Link to="/my-page/transaction-history/sale">거래 내역</Link>
           <Link to="/my-page/my-post">내가 쓴 게시글</Link>
-          <Link to="/my-page/edit-info">회원정보 수정</Link>
+          {!isKakaoLogin && <Link to="/my-page/edit-info">회원정보 수정</Link>}
+
           <Link to="/my-page/customer-service">고객 지원</Link>
         </aside>
         <div className={style.outletArea}>
