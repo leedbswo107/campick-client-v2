@@ -107,7 +107,7 @@ const RegisterPage = () => {
       <span className={style.divider}>
         <span className={style.innerText}>또는</span>
       </span>
-      <a href={`${process.env.REACT_APP_SERVER_URL}/authorize`}>
+      <a href={`${process.env.REACT_APP_SERVER_URL}authorize`}>
         <img
           src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
           width="222"
