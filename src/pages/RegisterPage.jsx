@@ -104,6 +104,15 @@ const RegisterPage = () => {
           회원가입
         </button>
       </form>
+      <span className={style.divider}>
+        <span className={style.innerText}>또는</span>
+      </span>
+      <a href="http://localhost:8000/authorize">
+        <img
+          src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+          width="222"
+        />
+      </a>
       <p className={style.registerLink}>
         계정이 있나요? <Link to="/signin">로그인</Link>
       </p>
