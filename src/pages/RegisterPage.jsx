@@ -104,6 +104,9 @@ const RegisterPage = () => {
           회원가입
         </button>
       </form>
+      <span className={style.divider}>
+        <span className={style.innerText}>또는</span>
+      </span>
       <a href="http://localhost:8000/authorize">
         <img
           src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"

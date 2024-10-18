@@ -73,6 +73,23 @@
   text-decoration: underline;
 }
 
+.divider {
+  display: block;
+  width: calc(100% / 3);
+  height: 0.01rem;
+  background-color: #7a8a87;
+  margin: 1.5rem 50%;
+  position: relative;
+  transform: translateX(-50%);
+}
+.divider .innerText {
+  position: absolute;
+  padding: 0 1rem;
+  background-color: white;
+  color: #7a8a87;
+  transform: translateX(-50%) translateY(-50%);
+}
+
 @media (max-width: 768px) {
   .mw {
     max-width: 100%;
