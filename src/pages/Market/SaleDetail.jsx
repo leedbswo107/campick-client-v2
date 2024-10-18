@@ -99,6 +99,28 @@ const SaleDetail = () => {
     }
   };
 
+  const handleCreateCheckout = async () => {
+    try {
+      const response = await fetch(
+        `${process.env.REACT_APP_SERVER_URL}/api/checkout`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ salePostId: id }),
+          credentials: "include",
+        }
+      );
+
+      const res = await response.json();
+
+      if (!res.result) return alert(res.message);
+
+      navigate(`/checkout/${res.checkout._id}`);
+    } catch (error) {}
+  };
+
   return (
     <section className={`mw ${style.detailCon}`}>
       <h2 hidden>SaleDetail</h2>
@@ -188,12 +210,7 @@ const SaleDetail = () => {
                 : "문의하기"}
             </button>
             {userId !== authorId && salesStatus !== "거래완료" && (
-              <button
-                className="submitButton"
-                onClick={() => {
-                  navigate(`/checkout`);
-                }}
-              >
+              <button className="submitButton" onClick={handleCreateCheckout}>
                 구매하기
               </button>
             )}
