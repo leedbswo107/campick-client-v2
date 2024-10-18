@@ -118,6 +118,7 @@ const Campsite = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
+        console.log("data????????", data);
         setLoading(false);
         setSiteLists((prevData) =>
           prevData ? [...prevData, ...data.response.body.items.item] : null
