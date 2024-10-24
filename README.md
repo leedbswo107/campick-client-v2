@@ -9,7 +9,7 @@
 
 <img src="./mainImg.png" width="100%">
 
-[Deploy Link] <https://campickk.netlify.app>
+[Deploy Link] <https://campickv2.netlify.app>
 
 ### 👫 팀원
 
