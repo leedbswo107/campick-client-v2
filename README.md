@@ -1,4 +1,4 @@
-# ⛺️ CAMPICK
+# ⛺️ CAMPICK.V2
 
 [Deploy Link] <https://campickv2.netlify.app>
 
