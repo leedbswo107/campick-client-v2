@@ -1,6 +1,8 @@
 # ⛺️ CAMPICK.V2
 
-[Deploy Link] <https://campickv2.netlify.app>
+[Origin Repo] <https://github.com/team4-campick/campick-client>  
+[Origin Deploy Link] <https://campickk.netlify.app>  
+[Deploy Link] <https://campickv2.netlify.app>  
 
 ### 👫 팀원
 
