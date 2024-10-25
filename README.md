@@ -41,7 +41,7 @@
 ┃ ┃   ┣ 📜Fail.jsx
 ┃ ┃   ┗ 📜Success.jsx
 ┃ ┣ 📂pages
-┃ ┃ ┣ 📂MyPage
+┃ ┃ ┣ 📂MyPage
 ┃ ┃ ┃ ┗ 📜MyPage.jsx
 ┃ ┃ ┣ 📂Market
 ┃ ┃ ┃ ┣ 📜Checkout.jsx
