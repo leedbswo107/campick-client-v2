@@ -10,34 +10,46 @@
 
 #### 소셜 로그인
 
-### 💻 구조
+### 💻 v2 변경 목록
 
 ```
 📦campick-server
-┣ 📂constants
 ┣ 📂controller
+┃ ┣ 📜authController.js
+┃ ┗ 📜checkoutController.js
 ┣ 📂models
+┃ ┗ 📜checkoutModel.js
 ┣ 📂routes
+┃ ┣ 📜authRoutes.js
+┃ ┗ 📜checkoutRoutes.js
 ┣ 📂services
-┣ 📂utils
+┃ ┣ 📜userServices.js
+┃ ┗ 📜checkoutService.js
 ┣ 📜server.js
 ┗ 📜package.json
 ```
 
 ```
 📦campick-client
-┣ 📂public
-┃ ┣ 📂images
-┃ ┃ ┣ 📂ContentsImage
-┃ ┃ ┣ 📂ContentsVideo
-┃ ┃ ┗ 📂EventImage
-┃ ┣ 📜index.html
-┃ ┗ 📜favicon.ico
 ┣ 📂src
 ┃ ┣ 📂components
+┃ ┃ ┣ 📂HeaderFooter
+┃ ┃ ┃ ┗ 📜Header.jsx
+┃ ┃ ┗ 📂Market
+┃ ┃   ┣ 📜Checkout.jsx
+┃ ┃   ┣ 📜SaleDetail.jsx
+┃ ┃   ┣ 📜Fail.jsx
+┃ ┃   ┗ 📜Success.jsx
 ┃ ┣ 📂pages
-┃ ┣ 📂store
-┃ ┣ 📂utils
+┃ ┃ ┣ 📂MyPage
+┃ ┃ ┃ ┗ 📜MyPage.jsx
+┃ ┃ ┣ 📂Market
+┃ ┃ ┃ ┣ 📜Checkout.jsx
+┃ ┃ ┃ ┗ 📜SaleDetail.jsx
+┃ ┃ ┣ 📜RegisterPage.jsx
+┃ ┃ ┗ 📜LoginPage.jsx
+┃ ┣ 📂hooks
+┃ ┃ ┗ 📜useGetCheckout.js
 ┃ ┗ 📜App.js
 ┣ 📜README.md
 ┣ 📜package.json
