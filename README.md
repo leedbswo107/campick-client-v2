@@ -19,13 +19,14 @@
 ### 결제
 *****
 ### 🔒 카카오 로그인
+|카카오 api 활용 소셜로그인|
+|---|
+|<img src='https://github.com/user-attachments/assets/cacba2d5-fb0c-4f8a-9dae-dabcfd6a98f7' width=700px>|
 
 <details>
   <summary>카카오 로그인 ERD</summary>
   <img src='https://github.com/user-attachments/assets/a55f03ac-2630-4ad7-8f7a-7c8fb997e322'>  
 </details>
-
-<img src='https://github.com/user-attachments/assets/cacba2d5-fb0c-4f8a-9dae-dabcfd6a98f7'>
 
 *****
 ### 💻 v2 변경된 파일 목록
