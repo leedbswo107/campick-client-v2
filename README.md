@@ -1,4 +1,4 @@
-# ⛺️ CAMPICK.V2
+# ⛺️ CAMPICK-ver2
 
 [Origin Repo] <https://github.com/team4-campick/campick-client>  
 [Origin Deploy Link] <https://campickk.netlify.app>  
@@ -100,5 +100,3 @@ auth2.0 활용 카카오 APi 적용
 ┣ 📜package.json
 ┗ 📜.gitignore
 ```
-
-### 💣 이슈 및 해결
