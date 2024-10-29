@@ -1,6 +1,6 @@
 import { loadTossPayments, ANONYMOUS } from "@tosspayments/tosspayments-sdk";
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import useGetCheckout from "../../hooks/useGetCheckout";
 import style from "../../css/Market/Checkout.module.css";
 
@@ -126,7 +126,8 @@ export default function Checkout() {
                 await widgets.requestPayment({
                   orderId: "8L-S81sdTGa13Myp1MfJ-",
                   orderName: "토스 티셔츠 외 2건",
-                  successUrl: window.location.origin + "/success",
+                  successUrl:
+                    window.location.origin + "/success/" + checkoutInfo._id,
                   failUrl: window.location.origin + "/fail",
                   customerEmail: "customer123@gmail.com",
                   customerName: "김토스",
