@@ -4,12 +4,6 @@
 [Origin Deploy Link] <https://campickk.netlify.app>  
 [Deploy Link] <https://campickv2.netlify.app>
 
-### 👫 팀원
-
-|      이윤재       |       신유진       |
-| :---------------: | :----------------: |
-| 카카오 api 로그인 | 토스 코어 api 결제 |
-
 ### 👩🏻‍💻 추가한 기능 및 개인 역할
 
 - 이윤재
