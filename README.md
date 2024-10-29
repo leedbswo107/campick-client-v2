@@ -2,26 +2,36 @@
 
 [Origin Repo] <https://github.com/team4-campick/campick-client>  
 [Origin Deploy Link] <https://campickk.netlify.app>  
-[Deploy Link] <https://campickv2.netlify.app>  
+[Deploy Link] <https://campickv2.netlify.app>
 
 ### 👫 팀원
 
-|이윤재|신유진|
-|:---:|:---:|
-|카카오 api 로그인|토스 코어 api 결제|
+|      이윤재       |       신유진       |
+| :---------------: | :----------------: |
+| 카카오 api 로그인 | 토스 코어 api 결제 |
 
 ### 👩🏻‍💻 추가한 기능 및 개인 역할
+
 - 이윤재
   - 카카오 API를 활용한 소셜로그인 기능 구현
 - 신유진
-  - 토스 코어 API를 활용한 상품 결제 기능 구현
-*****
-### 결제
-*****
+  - 토스 페이먼츠 결제 위젯 도입
+
+---
+
+### 💰 결제
+
+| 토스 페이먼츠 결제 위젯                                                                                 |
+| ------------------------------------------------------------------------------------------------------- |
+| <img src='https://github.com/user-attachments/assets/bb67452f-b42f-433b-9860-918c31344286' width=700px> |
+
+---
+
 ### 🔒 카카오 로그인
-|카카오 api 활용 소셜로그인|
-|---|
-|<img src='https://github.com/user-attachments/assets/cacba2d5-fb0c-4f8a-9dae-dabcfd6a98f7' width=700px>|
+
+| 카카오 api 활용 소셜로그인                                                                              |
+| ------------------------------------------------------------------------------------------------------- |
+| <img src='https://github.com/user-attachments/assets/cacba2d5-fb0c-4f8a-9dae-dabcfd6a98f7' width=700px> |
 
 <br/>
 
@@ -49,7 +59,8 @@ auth2.0 활용 카카오 APi 적용
 
 <br/>
 
-*****
+---
+
 ### 💻 v2 변경된 파일 목록
 
 ```
