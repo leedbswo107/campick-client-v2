@@ -24,9 +24,11 @@ const ReviewCard = ({ item, userName }) => {
             <i className={`fa-regular fa-star ${style.empty}`} key={i} />
           ))}
         </span>
-        <span className={style.writer}>{author.nickname}</span>
+        <span className={style.writer}>
+          {author?.nickname ? author.nickname : "탈퇴한 회원"}
+        </span>
       </p>
-      {userName === author.username ? (
+      {userName === author?.username ? (
         <div className={style.tools}>
           <button onClick={() => setModalOpen(true)}>수정</button>
           <button onClick={(e) => handleReviewDelete(e)}>삭제</button>

@@ -72,7 +72,22 @@ const LoginPage = () => {
       console.error("Error logging out:", error);
     }
   };
-
+  // const REST_Call = async (path) => {
+  //   try {
+  //     const response = await fetch("http://localhost:8000" + path, {
+  //       method: "GET",
+  //       credentials: "include",
+  //     });
+  //     if (!response.ok) {
+  //       throw new Error(`HTTP error! status: ${response.status}`);
+  //     }
+  //     console.log(response);
+  //     const data = await response.json();
+  //     console.log(data);
+  //   } catch (error) {
+  //     console.error("Error fetching data:", error);
+  //   }
+  // };
   if (redirect) {
     return <Navigate to="/" />;
   }
@@ -103,6 +118,17 @@ const LoginPage = () => {
           로그인
         </button>
       </form>
+      <span className={style.divider}>
+        <span className={style.innerText}>또는</span>
+      </span>
+      <a href={`${process.env.REACT_APP_SERVER_URL}` + "/authorize"}>
+        <img
+          src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+          width="222"
+        />
+      </a>
+      {/* <button onclick="REST_Call('/profile')">프로필 조회</button> */}
+      <br />
       <p className={style.signinLink}>
         처음이신가요? <Link to="/register">회원가입</Link>
       </p>
