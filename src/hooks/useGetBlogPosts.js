@@ -20,6 +20,7 @@ const useGetBlogPosts = () => {
           }
         );
 
+        if (!response.ok) throw new Error(`서버 오류 (${response.status})`);
         const data = await response.json();
 
         setBlogPosts(data.blogPosts);

@@ -19,6 +19,7 @@ const useGetMessages = () => {
           }
         );
 
+        if (!response.ok) throw new Error(`서버 오류 (${response.status})`);
         const res = await response.json();
 
         if (!res.result) return alert(res.message);
