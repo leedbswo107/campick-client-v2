@@ -19,6 +19,21 @@ import { RiStore3Fill } from "react-icons/ri";
 import { FaTrash } from "react-icons/fa6";
 import Loading from "../../components/Loading/Loading";
 import StarRating from "../../components/Campsite/StarRating";
+
+const OPTION_ICONS = {
+  전기: GiElectric,
+  무선인터넷: FaWifi,
+  장작판매: GiWoodBeam,
+  온수: BsFillCupHotFill,
+  트렘폴린: "",
+  물놀이장: FaSwimmingPool,
+  놀이터: "",
+  산책로: GiTrail,
+  운동장: FaDumbbell,
+  운동시설: FaDumbbell,
+  "마트.편의점": RiStore3Fill,
+  덤프스테이션: FaTrash,
+};
 const { kakao } = window;
 
 const SiteDetail = () => {
@@ -187,78 +202,15 @@ const SiteDetail = () => {
         <h3>Option</h3>
         <div className={style.options}>
           {newArr.map((e) => {
-            if (e === "전기")
-              return (
-                <div className={style.option}>
-                  <GiElectric />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "무선인터넷")
-              return (
-                <div className={style.option}>
-                  <FaWifi />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "장작판매")
-              return (
-                <div className={style.option}>
-                  <GiWoodBeam />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "온수")
-              return (
-                <div className={style.option}>
-                  <BsFillCupHotFill />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "트렘폴린") return;
-            if (e === "물놀이장")
-              return (
-                <div className={style.option}>
-                  <FaSwimmingPool />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "놀이터") return;
-            if (e === "산책로")
-              return (
-                <div className={style.option}>
-                  <GiTrail />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "운동장")
-              return (
-                <div className={style.option}>
-                  <FaDumbbell />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "운동시설")
-              return (
-                <div className={style.option}>
-                  <FaDumbbell />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "마트.편의점")
-              return (
-                <div className={style.option}>
-                  <RiStore3Fill />
-                  <span>{e}</span>
-                </div>
-              );
-            if (e === "덤프스테이션")
-              return (
-                <div className={style.option}>
-                  <FaTrash /> <span>{e}</span>
-                </div>
-              );
-            else return <div>정보 없음</div>;
+            const Icon = OPTION_ICONS[e];
+            if (Icon === undefined) return <div key={e}>정보 없음</div>;
+            if (!Icon) return null;
+            return (
+              <div key={e} className={style.option}>
+                <Icon />
+                <span>{e}</span>
+              </div>
+            );
           })}
         </div>
       </div>

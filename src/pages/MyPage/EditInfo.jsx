@@ -14,10 +14,14 @@ const EditInfo = () => {
   const [currentPW, setCurrentPW] = useState("");
   const [newPW, setNewPW] = useState("");
   const [checkPW, setCheckPW] = useState("");
-  const [errorMsg1, setErrorMsg1] = useState("");
-  const [errorMsg2, setErrorMsg2] = useState("");
-  const [errorMsg3, setErrorMsg3] = useState("");
-  const [errorMsg4, setErrorMsg4] = useState("");
+  const [errorMsg, setErrorMsg] = useState({
+    nickname: "",
+    currentPW: "",
+    newPW: "",
+    checkPW: "",
+  });
+  const setError = (field, msg) =>
+    setErrorMsg((prev) => ({ ...prev, [field]: msg }));
   const [nicknameDuplicateCheck, setNicknameDuplicateCheck] = useState(false);
 
   const dispatch = useDispatch();
@@ -28,10 +32,10 @@ const EditInfo = () => {
   const duplicateCheck = async (e) => {
     e.preventDefault();
     if (!nickname) {
-      setErrorMsg1(AUTH_ERROR.BLANK.NICKNAME);
+      setError("nickname", AUTH_ERROR.BLANK.NICKNAME);
       return;
     }
-    const response = await fetch(`${url}/duplicateCheck`, {
+    const response = await fetch(`${url}/duplicate-check`, {
       method: "POST",
       body: JSON.stringify({ nickname }),
       headers: {
@@ -41,14 +45,14 @@ const EditInfo = () => {
     });
     if (response.status === 200) {
       setNicknameDuplicateCheck(true);
-      setErrorMsg1("사용 가능");
+      setError("nickname", "사용 가능");
     } else if (response.status === 409) {
-      setErrorMsg1(AUTH_ERROR.DUPLICATE);
+      setError("nickname", AUTH_ERROR.DUPLICATE);
       setNicknameDuplicateCheck(false);
     }
   };
   const passwordCheck = async (password) => {
-    const response = await fetch(`${url}/passwordCheck/${userObjId}`, {
+    const response = await fetch(`${url}/password-check/${userObjId}`, {
       method: "POST",
       body: JSON.stringify({ password }),
       headers: {
@@ -64,30 +68,27 @@ const EditInfo = () => {
     const pwCheckResult = await passwordCheck(currentPW);
 
     if (nicknameDuplicateCheck === false) {
-      setErrorMsg1(AUTH_ERROR.DUPLICATE);
+      setError("nickname", AUTH_ERROR.DUPLICATE);
       return;
     }
     if (pwCheckResult === false) {
-      setErrorMsg2(AUTH_ERROR.NOT_MATCHING.CURRENT_PW);
+      setError("currentPW", AUTH_ERROR.NOT_MATCHING.CURRENT_PW);
       return;
     }
     if (!nickname) {
-      setErrorMsg1(AUTH_ERROR.BLANK.NICKNAME);
+      setError("nickname", AUTH_ERROR.BLANK.NICKNAME);
       return;
     } else if (currentPW === "") {
-      setErrorMsg2(AUTH_ERROR.BLANK.CURRENT_PW);
+      setError("currentPW", AUTH_ERROR.BLANK.CURRENT_PW);
       return;
     } else if (!newPW) {
-      setErrorMsg3(AUTH_ERROR.BLANK.NEW_PW);
+      setError("newPW", AUTH_ERROR.BLANK.NEW_PW);
       return;
     } else if (newPW !== checkPW) {
-      setErrorMsg4(AUTH_ERROR.NOT_MATCHING.NEW_PW);
+      setError("checkPW", AUTH_ERROR.NOT_MATCHING.NEW_PW);
       return;
     } else {
-      setErrorMsg1("");
-      setErrorMsg2("");
-      setErrorMsg3("");
-      setErrorMsg4("");
+      setErrorMsg({ nickname: "", currentPW: "", newPW: "", checkPW: "" });
     }
     const handleLogout = () => {
       fetch(`${url}/logout`, {
@@ -126,10 +127,10 @@ const EditInfo = () => {
             onChange={(e) => setNickname(e.target.value)}
             required
           />
-          {errorMsg1 !== "사용 가능" ? (
-            <span className={style.errMsg}>{errorMsg1}</span>
+          {errorMsg.nickname !== "사용 가능" ? (
+            <span className={style.errMsg}>{errorMsg.nickname}</span>
           ) : (
-            <span className={style.passed}>{errorMsg1}</span>
+            <span className={style.passed}>{errorMsg.nickname}</span>
           )}
 
           <button
@@ -148,7 +149,7 @@ const EditInfo = () => {
             value={currentPW}
             onChange={(e) => setCurrentPW(e.target.value)}
           />
-          <span className={style.errMsg}>{errorMsg2}</span>
+          <span className={style.errMsg}>{errorMsg.currentPW}</span>
         </label>
         <span className={style.divider}></span>
         <label className={style.inputArea}>
@@ -159,7 +160,7 @@ const EditInfo = () => {
             value={newPW}
             onChange={(e) => setNewPW(e.target.value)}
           />
-          <span className={style.errMsg}>{errorMsg3}</span>
+          <span className={style.errMsg}>{errorMsg.newPW}</span>
         </label>
         <label className={style.inputArea}>
           <span className={style.inputContent}>변경 비밀번호 확인</span>
@@ -169,7 +170,7 @@ const EditInfo = () => {
             value={checkPW}
             onChange={(e) => setCheckPW(e.target.value)}
           />
-          <span className={style.errMsg}>{errorMsg4}</span>
+          <span className={style.errMsg}>{errorMsg.checkPW}</span>
         </label>
         <button type="submit" className={style.submitBtn}>
           저장하기
