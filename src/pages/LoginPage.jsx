@@ -31,7 +31,7 @@ const LoginPage = () => {
       const loginDate = new Date().toISOString();
       console.log(loginDate);
 
-      const response = await fetch(`${url}/login`, {
+      const response = await fetch(`${url}/api/auth/login`, {
         method: "POST",
         body: JSON.stringify({ username, password, loginDate }),
         headers: { "Content-Type": "application/json" },
@@ -60,7 +60,7 @@ const LoginPage = () => {
 
   const logout = async () => {
     try {
-      const response = await fetch(`${url}/logout`, {
+      const response = await fetch(`${url}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
@@ -121,7 +121,7 @@ const LoginPage = () => {
       <span className={style.divider}>
         <span className={style.innerText}>또는</span>
       </span>
-      <a href={`${process.env.REACT_APP_SERVER_URL}` + "/authorize"}>
+      <a href={`${process.env.REACT_APP_SERVER_URL}` + "/api/auth/authorize"}>
         <img
           src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
           width="222"

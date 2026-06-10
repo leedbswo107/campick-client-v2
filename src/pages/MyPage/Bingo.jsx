@@ -22,7 +22,7 @@ const Bingo = () => {
   console.log("objId", userObjId);
   const updateMission = async () => {
     try {
-      const response = await fetch(`${url}/update-mission/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/update-mission/${userObjId}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -46,7 +46,7 @@ const Bingo = () => {
   };
   const getBingoPattern = async () => {
     try {
-      const response = await fetch(`${url}/bingo-pattern/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/bingo-pattern/${userObjId}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -59,7 +59,7 @@ const Bingo = () => {
   };
   const getBingoArea = async () => {
     try {
-      const response = await fetch(`${url}/bingo-area/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/bingo-area/${userObjId}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -72,7 +72,7 @@ const Bingo = () => {
   };
   const getBingoCount = async () => {
     try {
-      const response = await fetch(`${url}/bingo-count/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/bingo-count/${userObjId}`, {
         method: "GET",
         headers: { "Content-Type": "application/json" },
         credentials: "include",
@@ -85,7 +85,7 @@ const Bingo = () => {
   };
   const resetBingo = async () => {
     try {
-      const response = await fetch(`${url}/reset-bingo/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/reset-bingo/${userObjId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -100,7 +100,7 @@ const Bingo = () => {
   const couponDuplicateCheck = async (coupon) => {
     try {
       const newCoupon = coupon;
-      const response = await fetch(`${url}/check-duplicate/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/check-duplicate/${userObjId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -124,7 +124,7 @@ const Bingo = () => {
   const couponIssuance = async (coupon) => {
     try {
       const newCoupon = coupon;
-      const response = await fetch(`${url}/coupon/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/coupon/${userObjId}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

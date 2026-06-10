@@ -35,7 +35,7 @@ const EditInfo = () => {
       setError("nickname", AUTH_ERROR.BLANK.NICKNAME);
       return;
     }
-    const response = await fetch(`${url}/duplicate-check`, {
+    const response = await fetch(`${url}/api/my-page/duplicate-check`, {
       method: "POST",
       body: JSON.stringify({ nickname }),
       headers: {
@@ -52,7 +52,7 @@ const EditInfo = () => {
     }
   };
   const passwordCheck = async (password) => {
-    const response = await fetch(`${url}/password-check/${userObjId}`, {
+    const response = await fetch(`${url}/api/my-page/password-check/${userObjId}`, {
       method: "POST",
       body: JSON.stringify({ password }),
       headers: {
@@ -91,14 +91,14 @@ const EditInfo = () => {
       setErrorMsg({ nickname: "", currentPW: "", newPW: "", checkPW: "" });
     }
     const handleLogout = () => {
-      fetch(`${url}/logout`, {
+      fetch(`${url}/api/auth/logout`, {
         method: "POST",
         credentials: "include",
       });
       dispatch(setUserAllInfo(null));
       navigate("/");
     };
-    const response = await fetch(`${url}/user/${userObjId}`, {
+    const response = await fetch(`${url}/api/my-page/user/${userObjId}`, {
       method: "PUT",
       body: JSON.stringify({ nickname, password: newPW }),
       headers: { "Content-Type": "application/json" },

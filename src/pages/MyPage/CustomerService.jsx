@@ -44,7 +44,7 @@ const CustomerService = () => {
     } else {
       setContentErrMsg("");
     }
-    const response = await fetch(`${url}/inquiry`, {
+    const response = await fetch(`${url}/api/my-page/inquiry`, {
       method: "POST",
       body: JSON.stringify({
         title,
@@ -61,7 +61,7 @@ const CustomerService = () => {
   };
   const deleteUser = async () => {
     try {
-      const response = await fetch(`${url}/user/${userObjId}`, {
+      const response = await fetch(`${url}/api/my-page/user/${userObjId}`, {
         method: "DELETE",
         headers: { "Content-type": "application/json" },
         credentials: "include",

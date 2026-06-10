@@ -117,7 +117,7 @@ const SiteDetail = () => {
     const getReviewLst = async () => {
       try {
         console.log("리뷰 가져오기 실행");
-        const response = await fetch(`${url}/review/${id}`, {
+        const response = await fetch(`${url}/api/campsites/review/${id}`, {
           method: "GET",
         });
         const data = await response.json();
