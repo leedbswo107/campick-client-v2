@@ -41,7 +41,7 @@ const CouponCard = ({ coupon, updateCoupons }) => {
 
   const handleCouponDel = async () => {
     try {
-      const response = await fetch(`${url}/coupon/${coupon._id}`, {
+      const response = await fetch(`${url}/api/my-page/coupon/${coupon._id}`, {
         method: "DELETE",
         credentials: "include",
       });
@@ -56,7 +56,7 @@ const CouponCard = ({ coupon, updateCoupons }) => {
 
   const handleCouponUsed = async () => {
     try {
-      const response = await fetch(`${url}/coupon/${coupon._id}`, {
+      const response = await fetch(`${url}/api/my-page/coupon/${coupon._id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

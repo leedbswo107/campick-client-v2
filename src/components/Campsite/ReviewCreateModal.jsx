@@ -25,7 +25,7 @@ const ReviewCreateModal = ({ setModalOpen, id }) => {
       return;
     }
     try {
-      const response = await fetch(`${url}/review/${userObjId}`, {
+      const response = await fetch(`${url}/api/campsites/review/${userObjId}`, {
         method: "POST",
         body: JSON.stringify({
           score,
