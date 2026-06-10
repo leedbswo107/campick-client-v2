@@ -12,7 +12,7 @@ const Coupon = () => {
   useEffect(() => {
     const getCoupon = async () => {
       try {
-        const response = await fetch(`${url}/coupon/${userObjId}`, {
+        const response = await fetch(`${url}/api/my-page/coupon/${userObjId}`, {
           method: "GET",
           headers: { Accept: "application/json" },
           credentials: "include",

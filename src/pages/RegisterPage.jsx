@@ -35,7 +35,7 @@ const RegisterPage = () => {
 
     //백엔드로 post 요청 및 응답
     try {
-      const response = await fetch(`${url}/register`, {
+      const response = await fetch(`${url}/api/auth/register`, {
         method: "POST",
         body: JSON.stringify({
           username,
@@ -107,7 +107,7 @@ const RegisterPage = () => {
       <span className={style.divider}>
         <span className={style.innerText}>또는</span>
       </span>
-      <a href={`${process.env.REACT_APP_SERVER_URL}` + "/authorize"}>
+      <a href={`${process.env.REACT_APP_SERVER_URL}` + "/api/auth/authorize"}>
         <img
           src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
           width="222"

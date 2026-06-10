@@ -10,7 +10,7 @@ const MyPost = () => {
   useEffect(() => {
     const getMyPostList = async () => {
       try {
-        const response = await fetch(`${url}/post/${userObjId}`, {
+        const response = await fetch(`${url}/api/my-page/post/${userObjId}`, {
           method: "GET",
           headers: { Accept: "application/json" },
           credentials: "include",

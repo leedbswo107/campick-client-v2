@@ -11,7 +11,7 @@ const Sale = () => {
 
   const getSalePostList = async () => {
     try {
-      const response = await fetch(`${url}/sale-post/${userId}`, {
+      const response = await fetch(`${url}/api/my-page/sale-post/${userId}`, {
         method: "GET",
         headers: { Accept: "application/json" },
         credentials: "include",

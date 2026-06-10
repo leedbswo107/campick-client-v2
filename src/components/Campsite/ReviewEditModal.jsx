@@ -25,7 +25,7 @@ const ReviewEditModal = ({ setModalOpen, item }) => {
       return;
     }
     try {
-      const response = await fetch(`${url}/review/${_id}`, {
+      const response = await fetch(`${url}/api/campsites/review/${_id}`, {
         method: "PUT",
         body: JSON.stringify({
           score: editScore,

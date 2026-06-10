@@ -16,7 +16,7 @@ const Header = () => {
   const [gnbOn, setGnbOn] = useState(false);
   useEffect(() => {
     const fetchProfile = async () => {
-      const response = await fetch(`${url}/profile`, {
+      const response = await fetch(`${url}/api/auth/profile`, {
         credentials: "include",
       });
       if (response.ok) {
@@ -28,7 +28,7 @@ const Header = () => {
   }, [dispatch, location.pathname]);
   const handleLogout = (e) => {
     e.preventDefault();
-    fetch(`${url}/logout`, {
+    fetch(`${url}/api/auth/logout`, {
       method: "POST",
       credentials: "include",
     });
